@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <!-- Asset Manager icon for 16, 24 and 32 px: same design as asset-manager.svg
+  <!-- Minium icon for 16, 24 and 32 px: same design as minium.svg
        with a smaller corner radius, lighter tiles, wider gaps and a larger tag hole,
        so it stays clear in the taskbar. -->
   <rect x="16" y="16" width="992" height="992" rx="180" fill="#19191b"/>

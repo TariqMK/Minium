@@ -1,5 +1,5 @@
 """
-Asset Manager -- a non-destructive, Eagle-style tagging layer over your
+Minium -- a non-destructive, Eagle-style tagging layer over your
 own image folders. Never moves or renames your source files.
 
 Run with:  python app.py
@@ -308,7 +308,7 @@ if __name__ == "__main__":
     flask_thread.start()
 
     window = webview.create_window(
-        f"Asset Manager {display_version()}",
+        f"Minium {display_version()}",
         "http://127.0.0.1:57433/",
         width=1400,
         height=900,
@@ -317,5 +317,5 @@ if __name__ == "__main__":
     )
     # Used by the Linux (Qt) window only. Windows takes the icon from the
     # exe and macOS from the app bundle, so build.py ships it on Linux only.
-    icon = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "icon", "asset-manager.png")
+    icon = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "icon", "minium.png")
     webview.start(icon=icon if os.path.isfile(icon) else None)

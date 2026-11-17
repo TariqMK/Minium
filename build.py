@@ -8,11 +8,11 @@ building for (the release workflow runs it on Windows, macOS and Linux):
     python build.py
 
 Output lands in dist/:
-  - Windows / Linux: dist/AssetManager/ -- copy that whole folder wherever
+  - Windows / Linux: dist/Minium/ -- copy that whole folder wherever
     you want to run it from; library_data/ is created alongside the
     executable on first launch, same portable pattern as your other tools.
-  - macOS: dist/AssetManager.app -- library data goes to
-    ~/Library/Application Support/AssetManager (see backend/config.py).
+  - macOS: dist/Minium.app -- library data goes to
+    ~/Library/Application Support/Minium (see backend/config.py).
 
 Every build is stamped with a version, shown in the app's title. It comes
 from the VERSION environment variable (set by the release workflow), or
@@ -32,7 +32,7 @@ ICON_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", "i
 
 args = [
     "app.py",
-    "--name=AssetManager",
+    "--name=Minium",
     "--windowed",
     "--noconfirm",
     f"--add-data=templates{os.pathsep}templates",
@@ -47,18 +47,18 @@ args = [
 if sys.platform == "win32":
     args += [
         "--hidden-import=webview.platforms.winforms",
-        f"--icon={os.path.join(ICON_DIR, 'asset-manager.ico')}",
+        f"--icon={os.path.join(ICON_DIR, 'minium.ico')}",
     ]
 elif sys.platform == "darwin":
     args += [
         "--hidden-import=webview.platforms.cocoa",
-        "--osx-bundle-identifier=com.tariqmk.assetmanager",
-        f"--icon={os.path.join(ICON_DIR, 'asset-manager.icns')}",
+        "--osx-bundle-identifier=com.tariqmk.minium",
+        f"--icon={os.path.join(ICON_DIR, 'minium.icns')}",
     ]
 else:
     args += [
         "--hidden-import=webview.platforms.qt",
-        f"--add-data={os.path.join(ICON_DIR, 'asset-manager.png')}{os.pathsep}assets/icon",
+        f"--add-data={os.path.join(ICON_DIR, 'minium.png')}{os.pathsep}assets/icon",
     ]
 
 VERSION_FILE = os.path.join("backend", "version.py")
@@ -81,7 +81,7 @@ def build_version():
 
 
 version = build_version()
-print(f"Building Asset Manager v{version}")
+print(f"Building Minium v{version}")
 
 with open(VERSION_FILE, encoding="utf-8") as f:
     original = f.read()

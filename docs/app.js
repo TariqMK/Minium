@@ -1,7 +1,7 @@
 // Product page behaviour: live app previews with made-up sample data, and download links from the latest GitHub release.
 "use strict";
 
-const REPO = "TariqMK/Asset-Manager";
+const REPO = "TariqMK/Minium";
 const ASSET = { windows: /windows-x64\.zip$/i, macos: /macos-arm64\.zip$/i, linux: /linux-x64\.tar\.gz$/i };
 const OS_NAME = { windows: "Windows", macos: "macOS", linux: "Linux" };
 const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -57,7 +57,7 @@ function renderHero() {
   const row = (icon, label, n, cls = "") =>
     `<div class="side-row ${cls}">${svg(icon)}<span>${esc(label)}</span>${n !== undefined ? `<span class="n">${n}</span>` : ""}</div>`;
   sidebar.innerHTML =
-    `<div class="app-brand">Asset Manager <span class="cat">v1.2.2</span></div>` +
+    `<div class="app-brand">Minium <span class="cat">v1.2.2</span></div>` +
     row("images", "All files", undefined, "active") +
     row("image-off", "Missing", 1) +
     `<div class="side-label">Tags</div>` +

@@ -90,7 +90,7 @@ jobs:
         shell: bash
     env:
       VERSION: ${{ needs.version.outputs.version }}
-      ASSET: AssetManager-${{ needs.version.outputs.tag }}-${{ matrix.label }}
+      ASSET: Minium-${{ needs.version.outputs.tag }}-${{ matrix.label }}
     steps:
       - uses: actions/checkout@v4
 
@@ -122,8 +122,8 @@ jobs:
         run: |
           # Without --icon PyInstaller adds its own default icon, so look
           # for ours by name.
-          if [ ! -f dist/AssetManager.app/Contents/Resources/asset-manager.icns ]; then
-            echo "::error::AssetManager.app does not contain asset-manager.icns"
+          if [ ! -f dist/Minium.app/Contents/Resources/minium.icns ]; then
+            echo "::error::Minium.app does not contain minium.icns"
             exit 1
           fi
 
@@ -131,9 +131,9 @@ jobs:
         run: |
           mkdir -p out
           case "$RUNNER_OS" in
-            Windows) (cd dist && 7z a -tzip "../out/${ASSET}.zip" AssetManager) ;;
-            macOS)   ditto -c -k --keepParent dist/AssetManager.app "out/${ASSET}.zip" ;;
-            Linux)   tar -C dist -czf "out/${ASSET}.tar.gz" AssetManager ;;
+            Windows) (cd dist && 7z a -tzip "../out/${ASSET}.zip" Minium) ;;
+            macOS)   ditto -c -k --keepParent dist/Minium.app "out/${ASSET}.zip" ;;
+            Linux)   tar -C dist -czf "out/${ASSET}.tar.gz" Minium ;;
           esac
           ls -lh out
 
@@ -169,7 +169,7 @@ jobs:
 
       - name: Create release
         run: |
-          flags=(--verify-tag --title "Asset Manager $TAG" --generate-notes)
+          flags=(--verify-tag --title "Minium $TAG" --generate-notes)
           if [ "$RELEASE_TYPE" = "draft" ]; then
             flags+=(--draft)
           else

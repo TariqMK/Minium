@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <!-- Asset Manager icon master: a brass tag laid across a grid of thumbnails.
+  <!-- Minium icon master: a brass tag laid across a grid of thumbnails.
        Colours come from static/css/style.css (surface, raised, accent). -->
   <rect x="32" y="32" width="960" height="960" rx="216" fill="#19191b"/>
   <rect x="36" y="36" width="952" height="952" rx="212" fill="none" stroke="#ededed" stroke-opacity="0.14" stroke-width="8"/>

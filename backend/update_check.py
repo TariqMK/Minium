@@ -8,8 +8,8 @@ import re
 import urllib.error
 import urllib.request
 
-APP_NAME = "Asset Manager"
-REPO = "TariqMK/Asset-Manager"
+APP_NAME = "Minium"
+REPO = "TariqMK/Minium"
 LATEST_URL = f"https://api.github.com/repos/{REPO}/releases/latest"
 RELEASES_PAGE = f"https://github.com/{REPO}/releases"
 TIMEOUT_S = 10
@@ -42,7 +42,7 @@ def _fetch(current_version):
     request = urllib.request.Request(
         LATEST_URL,
         headers={
-            "User-Agent": f"AssetManager/{current_version}",
+            "User-Agent": f"Minium/{current_version}",
             "Accept": "application/vnd.github+json",
         },
     )

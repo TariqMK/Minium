@@ -971,7 +971,7 @@ function showUpdateModal(result, error) {
     headline = "The update check didn't complete.";
     detail = error;
   } else if (result.status === "newer") {
-    headline = `Asset Manager ${result.latest} is available.`;
+    headline = `Minium ${result.latest} is available.`;
     detail = `You have ${result.current}. Open the release page to download the new version.`;
     offerPage = true;
   } else if (result.status === "dev") {
@@ -979,7 +979,7 @@ function showUpdateModal(result, error) {
     detail = `You are running ${result.current}. The latest release is ${result.latest}.`;
     offerPage = true;
   } else {
-    headline = "Asset Manager is up to date.";
+    headline = "Minium is up to date.";
     detail = `${result.current} is the latest release.`;
   }
   const notes = offerPage && result.notes ? result.notes.trim() : "";

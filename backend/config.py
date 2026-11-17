@@ -19,9 +19,13 @@ if getattr(sys, "frozen", False) and sys.platform == "darwin":
     # A macOS .app bundle isn't a safe place to write: replacing the app
     # on update would wipe the library, and an unsigned app launched
     # from Downloads runs from a read-only translocated copy.
-    DATA_DIR = os.path.join(
-        os.path.expanduser("~/Library/Application Support"), "AssetManager", "library_data"
-    )
+    _SUPPORT = os.path.expanduser("~/Library/Application Support")
+    DATA_DIR = os.path.join(_SUPPORT, "Minium", "library_data")
+    # The app was called Asset Manager before. Keep using a library made
+    # under the old name, so updating never shows an empty library.
+    _LEGACY_DATA_DIR = os.path.join(_SUPPORT, "AssetManager", "library_data")
+    if not os.path.isdir(DATA_DIR) and os.path.isdir(_LEGACY_DATA_DIR):
+        DATA_DIR = _LEGACY_DATA_DIR
 else:
     DATA_DIR = os.path.join(APP_DIR, "library_data")
 INDEX_DIR = os.path.join(DATA_DIR, "index")

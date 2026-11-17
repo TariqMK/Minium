@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from backend import update_check as uc  # noqa: E402
 
 
-def response(tag="v1.4.0", url="https://github.com/TariqMK/Asset-Manager/releases/tag/v1.4.0", body="Notes"):
+def response(tag="v1.4.0", url="https://github.com/TariqMK/Minium/releases/tag/v1.4.0", body="Notes"):
     return lambda _version: json.dumps({"tag_name": tag, "html_url": url, "body": body}).encode()
 
 
@@ -49,7 +49,7 @@ class ResultTests(unittest.TestCase):
         r = uc.check("1.3.9", fetch=response())
         self.assertEqual(r["status"], "newer")
         self.assertEqual((r["current"], r["latest"]), ("v1.3.9", "v1.4.0"))
-        self.assertEqual(r["url"], "https://github.com/TariqMK/Asset-Manager/releases/tag/v1.4.0")
+        self.assertEqual(r["url"], "https://github.com/TariqMK/Minium/releases/tag/v1.4.0")
         self.assertEqual(r["notes"], "Notes")
 
     def test_up_to_date(self):
@@ -91,7 +91,7 @@ class ResultTests(unittest.TestCase):
             uc.check("1.0.0")
         finally:
             uc.urllib.request.urlopen = original
-        self.assertEqual(captured["headers"]["User-agent"], "AssetManager/1.0.0")
+        self.assertEqual(captured["headers"]["User-agent"], "Minium/1.0.0")
         self.assertEqual(captured["headers"]["Accept"], "application/vnd.github+json")
         self.assertEqual(captured["timeout"], 10)
 
@@ -103,7 +103,7 @@ class ErrorTests(unittest.TestCase):
         self.assertEqual(str(ctx.exception), message)
 
     def test_no_release(self):
-        self.assertMessage(failing(http_error(404)), "No Asset Manager releases are published yet.")
+        self.assertMessage(failing(http_error(404)), "No Minium releases are published yet.")
 
     def test_rate_limit(self):
         for code in (403, 429):
@@ -122,7 +122,7 @@ class ErrorTests(unittest.TestCase):
                            "Can't reach GitHub: timed out. Check the internet connection.")
 
     def test_unreadable(self):
-        msg = "GitHub sent an answer Asset Manager can't read. Try again later."
+        msg = "GitHub sent an answer Minium can't read. Try again later."
         self.assertMessage(lambda _v: b"not json", msg)
         self.assertMessage(lambda _v: b"[]", msg)
         self.assertMessage(response(tag="nightly"), msg)

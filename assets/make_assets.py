@@ -1,16 +1,16 @@
-"""Builds every Asset Manager brand image from the icon masters in assets/icon/.
+"""Builds every Minium brand image from the icon masters in assets/icon/.
 
 Writes:
-  assets/icon/asset-manager.png    1024 x 1024 px
-  assets/icon/asset-manager.ico    16, 20, 24, 32, 40, 48, 64, 128, 256 px (Windows)
-  assets/icon/asset-manager.icns   16 to 1024 px, with @2x sizes (macOS)
+  assets/icon/minium.png    1024 x 1024 px
+  assets/icon/minium.ico    16, 20, 24, 32, 40, 48, 64, 128, 256 px (Windows)
+  assets/icon/minium.icns   16 to 1024 px, with @2x sizes (macOS)
   assets/banner.png                README banner, 1280 x 320 px drawn at 2x
   assets/social-card.png           GitHub social preview, 1280 x 640 px
   docs/icon.svg, docs/apple-touch-icon.png (180 px), docs/social-card.png
                                    copies for the GitHub Pages site
 
-The 16, 24 and 32 px sizes come from asset-manager-small.svg. All other sizes
-come from asset-manager.svg. Colours match static/css/style.css.
+The 16, 24 and 32 px sizes come from minium-small.svg. All other sizes
+come from minium.svg. Colours match static/css/style.css.
 
 Run it from the repo root with a Python that has PySide6 and Pillow. These are
 only needed to make the images, not to run the app:
@@ -40,7 +40,7 @@ from PySide6.QtGui import (
 from PySide6.QtSvg import QSvgRenderer
 
 # ------------------------------------------------------------ brand values
-NAME = "Asset Manager"
+NAME = "Minium"
 TAGLINE = "Tag, sort and find images. Files untouched."
 SUBLINE = "Windows · macOS · Linux"
 
@@ -55,8 +55,8 @@ MONO = ["Cascadia Mono", "Consolas", "SF Mono", "Menlo", "DejaVu Sans Mono"]
 
 ASSETS = Path(__file__).resolve().parent
 ICON_DIR = ASSETS / "icon"
-MASTER = ICON_DIR / "asset-manager.svg"
-SMALL = ICON_DIR / "asset-manager-small.svg"
+MASTER = ICON_DIR / "minium.svg"
+SMALL = ICON_DIR / "minium-small.svg"
 SMALL_SIZES = {16, 24, 32}
 
 ICO_SIZES = [16, 20, 24, 32, 40, 48, 64, 128, 256]
@@ -87,17 +87,17 @@ def icon(size: int) -> Image.Image:
 
 
 def make_icons() -> None:
-    png = ICON_DIR / "asset-manager.png"
+    png = ICON_DIR / "minium.png"
     icon(1024).save(png)
     print(f"Wrote {png.relative_to(ASSETS.parent)}")
 
-    ico = ICON_DIR / "asset-manager.ico"
+    ico = ICON_DIR / "minium.ico"
     frames = [icon(s) for s in ICO_SIZES]
     # Pillow writes each frame as PNG inside the .ico.
     frames[-1].save(ico, format="ICO", sizes=[(s, s) for s in ICO_SIZES], append_images=frames[:-1])
     print(f"Wrote {ico.relative_to(ASSETS.parent)}")
 
-    icns = ICON_DIR / "asset-manager.icns"
+    icns = ICON_DIR / "minium.icns"
     images = [icon(s) for s in ICNS_SIZES]
     images[-1].save(icns, format="ICNS", append_images=images[:-1])
     print(f"Wrote {icns.relative_to(ASSETS.parent)}")

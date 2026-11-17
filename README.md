@@ -1,4 +1,4 @@
-![Asset Manager. Tag, sort and find images. Files untouched.](assets/banner.png)
+![Minium. Tag, sort and find images. Files untouched.](assets/banner.png)
 
 A desktop app for organising your image and design-asset folders with **tags, notes and collections**, without ever moving, renaming or modifying your original files.
 
@@ -6,35 +6,37 @@ Point it at the folders you already use and it builds a browsable, searchable li
 
 Works offline. No account, no telemetry. The app connects to the internet only when you check for updates.
 
+Minium was called Asset Manager before. Your existing library carries over: see [Updating to a new version](#updating-to-a-new-version).
+
 <picture>
-  <img src="assets/screenshots/library-dark.png" alt="Asset Manager showing all files: the sidebar with tags, watched folders and collections, a grid of image thumbnails, and the details panel for a landscape photo with its tags, collections and a note" width="840">
+  <img src="assets/screenshots/library-dark.png" alt="Minium showing all files: the sidebar with tags, watched folders and collections, a grid of image thumbnails, and the details panel for a landscape photo with its tags, collections and a note" width="840">
 </picture>
 
 ## Download and install
 
-Get the latest build from the [Releases page](https://github.com/TariqMK/Asset-Manager/releases). There's nothing to install: unzip it and run it.
+Get the latest build from the [Releases page](https://github.com/TariqMK/Minium/releases). There's nothing to install: unzip it and run it.
 
 | Platform | Download | Run |
 | --- | --- | --- |
-| Windows 10 / 11 | `AssetManager-vX.Y.Z-windows-x64.zip` | Unzip, open the `AssetManager` folder, run `AssetManager.exe` |
-| macOS (Apple Silicon) | `AssetManager-vX.Y.Z-macos-arm64.zip` | Unzip and open `AssetManager.app` |
-| Linux (x64) | `AssetManager-vX.Y.Z-linux-x64.tar.gz` | Extract and run `AssetManager/AssetManager` |
+| Windows 10 / 11 | `Minium-vX.Y.Z-windows-x64.zip` | Unzip, open the `Minium` folder, run `Minium.exe` |
+| macOS (Apple Silicon) | `Minium-vX.Y.Z-macos-arm64.zip` | Unzip and open `Minium.app` |
+| Linux (x64) | `Minium-vX.Y.Z-linux-x64.tar.gz` | Extract and run `Minium/Minium` |
 
 ### Windows
 
-- Keep the whole `AssetManager` folder together. `AssetManager.exe` needs the `_internal` folder next to it, so move the folder, not just the exe. To launch it from the Start menu or desktop, make a shortcut to the exe.
+- Keep the whole `Minium` folder together. `Minium.exe` needs the `_internal` folder next to it, so move the folder, not just the exe. To launch it from the Start menu or desktop, make a shortcut to the exe.
 - Put the folder somewhere you can write to, like `Documents` or another drive, not `Program Files`. Your library is saved next to the app.
 - The app isn't code-signed, so Windows SmartScreen may say *Windows protected your PC* the first time. Click **More info** → **Run anyway**.
 - The window uses the Microsoft Edge WebView2 runtime. It comes with Windows 11 and up-to-date Windows 10. If the window opens blank, install it from [Microsoft](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ### macOS
 
-- The app isn't signed with an Apple Developer certificate yet, so macOS blocks it the first time. Right-click `AssetManager.app` → **Open** → **Open**, or run `xattr -cr AssetManager.app` in Terminal.
+- The app isn't signed with an Apple Developer certificate yet, so macOS blocks it the first time. Right-click `Minium.app` → **Open** → **Open**, or run `xattr -cr Minium.app` in Terminal.
 - Move it into `Applications` if you like. Your library is stored separately (see [Where your library is stored](#where-your-library-is-stored)), so moving or replacing the app doesn't affect it.
 
 ### Linux
 
-- Keep the extracted `AssetManager` folder together and run `AssetManager/AssetManager`. Like on Windows, the library is saved next to the app.
+- Keep the extracted `Minium` folder together and run `Minium/Minium`. Like on Windows, the library is saved next to the app.
 
 ## Getting started
 
@@ -42,7 +44,7 @@ Get the latest build from the [Releases page](https://github.com/TariqMK/Asset-M
 2. Pick a folder of images and choose whether to include its subfolders. The scan runs in the background, with progress in the bottom-right corner.
 3. Click any image to open its details panel, then add tags, notes and collections.
 
-Nothing on disk is moved or changed at any point. Asset Manager only reads your images to make previews.
+Nothing on disk is moved or changed at any point. Minium only reads your images to make previews.
 
 **Supported formats:** PNG, JPG/JPEG, GIF, WebP, BMP, TIFF and SVG. SVG files are listed and taggable but show a placeholder instead of a preview.
 
@@ -62,7 +64,7 @@ The **Missing** view. A file that was moved outside the app keeps its tags and n
 
 ## Features
 
-- **Non-destructive.** Your files are never moved, renamed, edited or deleted. Removing something from the library only removes Asset Manager's record of it.
+- **Non-destructive.** Your files are never moved, renamed, edited or deleted. Removing something from the library only removes Minium's record of it.
 - **Watched folders.** Add any folder, on a local disk, an external drive or a network share, with or without its subfolders. Rescan any time to pick up new files.
 - **Import individual files.** Drag images onto the window, or use **Import files**, to add files that live outside your watched folders.
 - **Tags and notes.** Tag any image and attach free-form notes. Click a tag in the sidebar to filter by it.
@@ -73,7 +75,7 @@ The **Missing** view. A file that was moved outside the app keeps its tags and n
 - **Missing-file tracking.** If a file disappears from its last known location, its tags and notes are kept and it's listed under **Missing**. Use **Relink…** to point it at the new location.
 - **Offline drives.** If a whole watched folder can't be reached, for example an unplugged drive, it's marked *offline* in the sidebar instead of every file being flagged as missing.
 
-## Using Asset Manager
+## Using Minium
 
 | Task | How |
 | --- | --- |
@@ -89,14 +91,14 @@ The **Missing** view. A file that was moved outside the app keeps its tags and n
 | Find files that have moved | Open **Missing** in the sidebar, select a file and click **Relink…** |
 | Stop tracking a file | Click **Remove from library** in the details panel. The file itself is untouched |
 | Close the details panel | Click **×** or press **Esc** |
-| Check for updates | Click the version number next to *Asset Manager* at the top of the sidebar |
+| Check for updates | Click the version number next to *Minium* at the top of the sidebar |
 
 ## Where your library is stored
 
 Your tags, notes, collections and previews are kept in a `library_data` folder:
 
-- **Windows and Linux:** inside the `AssetManager` folder, next to the app
-- **macOS:** `~/Library/Application Support/AssetManager/library_data`
+- **Windows and Linux:** inside the `Minium` folder, next to the app
+- **macOS:** `~/Library/Application Support/Minium/library_data`. If you used the app when it was called Asset Manager, the library stays in `~/Library/Application Support/AssetManager/library_data` and the app keeps using it.
 
 ```
 library_data/
@@ -114,8 +116,9 @@ It's all plain JSON, and every save is written in one step, so a crash or power 
 
 ## Updating to a new version
 
-- **Windows and Linux:** your library lives inside the app folder, so carry it across. Close the app, extract the new version, then copy `library_data` from your old `AssetManager` folder into the new one. You can delete the old folder afterwards.
-- **macOS:** replace `AssetManager.app` with the new one. Your library is stored outside the app and stays where it is.
+- **Windows and Linux:** your library lives inside the app folder, so carry it across. Close the app, extract the new version, then copy `library_data` from your old `Minium` folder into the new one. You can delete the old folder afterwards.
+- **macOS:** replace `Minium.app` with the new one. Your library is stored outside the app and stays where it is.
+- **From Asset Manager:** follow the same steps. On Windows and Linux, copy `library_data` from the old `AssetManager` folder into the new `Minium` folder. On macOS, delete `AssetManager.app` after you install `Minium.app`. The library is found automatically.
 
 The version you're running is shown in the window title and next to the app name in the sidebar.
 
@@ -123,7 +126,7 @@ The version you're running is shown in the window title and next to the app name
 
 The app never checks for updates by itself. To check:
 
-1. Click the version number next to *Asset Manager* at the top of the sidebar. It shows *checking…* while it waits.
+1. Click the version number next to *Minium* at the top of the sidebar. It shows *checking…* while it waits.
 2. Read the result in the **Check for updates** dialog.
 3. If a newer version is available, click **Open release page**. The release page opens in your browser.
 4. Download the new version and follow the steps above.
@@ -143,7 +146,7 @@ The app never checks for updates by itself. To check:
 This affects v1.2.0 and earlier when the zip was extracted with Windows' built-in extractor, which marks every file as downloaded. Run this in PowerShell, using your own folder path, then start the app again:
 
 ```powershell
-Get-ChildItem "C:\path\to\AssetManager" -Recurse | Unblock-File
+Get-ChildItem "C:\path\to\Minium" -Recurse | Unblock-File
 ```
 
 Or right-click the zip, choose **Properties**, tick **Unblock**, and extract it again. Later versions fix this automatically.
@@ -155,7 +158,7 @@ Install the [Microsoft Edge WebView2 runtime](https://developer.microsoft.com/mi
 The drive or network share isn't connected. Its files keep their tags and aren't marked missing. Reconnect it and click rescan.
 
 **Check for updates says it can't reach GitHub, or that GitHub limits how often it can be checked.**
-The computer is offline, or GitHub allows only a limited number of checks per hour from one network. Check the internet connection, or try again in an hour. You can also open the [Releases page](https://github.com/TariqMK/Asset-Manager/releases) directly.
+The computer is offline, or GitHub allows only a limited number of checks per hour from one network. Check the internet connection, or try again in an hour. You can also open the [Releases page](https://github.com/TariqMK/Minium/releases) directly.
 
 **Dragging files onto the window doesn't import them.**
 Use **Import files** instead, which always works.
@@ -172,11 +175,11 @@ Open **Missing** in the sidebar, select it and click **Relink…** to point it a
 Requires Python 3.10 or newer. It's developed on Python 3.14, on Windows. On Linux, also install the Qt backend with `pip install "pywebview[qt]"`.
 
 ```bash
-git clone https://github.com/TariqMK/Asset-Manager.git
+git clone https://github.com/TariqMK/Minium.git
 ```
 
 ```bash
-cd Asset-Manager
+cd Minium
 ```
 
 ```bash
@@ -217,7 +220,7 @@ pip install pyinstaller
 python build.py
 ```
 
-The build goes to `dist/AssetManager/` on Windows and Linux, or `dist/AssetManager.app` on macOS. Every build is stamped with a version: set the `VERSION` environment variable to choose it, otherwise it comes from `git describe`, for example `0.3.0-2-g1a2b3c4` for two commits after the `v0.3.0` tag.
+The build goes to `dist/Minium/` on Windows and Linux, or `dist/Minium.app` on macOS. Every build is stamped with a version: set the `VERSION` environment variable to choose it, otherwise it comes from `git describe`, for example `0.3.0-2-g1a2b3c4` for two commits after the `v0.3.0` tag.
 
 ### Update the screenshots
 
