@@ -52,12 +52,15 @@ function loop(fn, ms) {
 }
 
 // ------------------------------------------------------------ hero: the library window
+// The preview shows the latest release once wireDownloads() has fetched it.
+let heroVersion = "v2.0.2";
+
 function renderHero() {
   const sidebar = document.getElementById("hero-sidebar");
   const row = (icon, label, n, cls = "") =>
     `<div class="side-row ${cls}">${svg(icon)}<span>${esc(label)}</span>${n !== undefined ? `<span class="n">${n}</span>` : ""}</div>`;
   sidebar.innerHTML =
-    `<div class="app-brand">Minium <span class="cat">v1.2.2</span></div>` +
+    `<div class="app-brand">Minium <span class="cat" id="hero-version">${esc(heroVersion)}</span></div>` +
     row("images", "All files", undefined, "active") +
     row("image-off", "Missing", 1) +
     `<div class="side-label">Tags</div>` +
@@ -261,6 +264,9 @@ async function wireDownloads() {
     const date = new Date(rel.published_at).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
     document.getElementById("download-meta").textContent = `${rel.tag_name} · Released ${date}`;
     document.getElementById("hero-meta").textContent = `${rel.tag_name} · Free · Windows · macOS · Linux · Offline, no tracking`;
+    heroVersion = rel.tag_name;
+    document.getElementById("hero-version").textContent = rel.tag_name;
+    document.getElementById("hero-title").textContent = `Minium ${rel.tag_name}`;
     for (const [key, pattern] of Object.entries(ASSET)) {
       const asset = rel.assets.find((a) => pattern.test(a.name));
       if (!asset) continue;

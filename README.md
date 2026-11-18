@@ -1,206 +1,274 @@
 ![Minium. Tag, sort and find images. Files untouched.](assets/banner.png)
 
-A desktop app for organising your image and design-asset folders with **tags, notes and collections**, without ever moving, renaming or modifying your original files.
+Minium is a desktop app for Windows, macOS and Linux. It adds **tags, notes and collections** to the image folders you already use. It never moves, renames or changes your files.
 
-Point it at the folders you already use and it builds a browsable, searchable library on top of them. Everything it knows about your files lives in its own data folder, so your source folders stay exactly as they are.
+Add your folders and Minium builds a searchable library on top of them. The library is kept in the app's own data folder. Your folders stay as they are.
 
-Works offline. No account, no telemetry. The app connects to the internet only when you check for updates.
+Works offline. No account, no tracking. The app goes online only when you check for updates.
 
-Minium was called Asset Manager before. Your existing library carries over: see [Updating to a new version](#updating-to-a-new-version).
+**Note:** Minium was called Asset Manager before. Your library carries over. See [Updating to a New Version](#updating-to-a-new-version).
 
 <picture>
   <img src="assets/screenshots/library-dark.png" alt="Minium showing all files: the sidebar with tags, watched folders and collections, a grid of image thumbnails, and the details panel for a landscape photo with its tags, collections and a note" width="840">
 </picture>
 
-## Download and install
+## Download and Install
 
-Get the latest build from the [Releases page](https://github.com/TariqMK/Minium/releases). There's nothing to install: unzip it and run it.
+Download the latest build from the [Releases page](https://github.com/TariqMK/Minium/releases/latest). The app needs no installer.
 
-| Platform | Download | Run |
+| Platform | Download | Open |
 | --- | --- | --- |
-| Windows 10 / 11 | `Minium-vX.Y.Z-windows-x64.zip` | Unzip, open the `Minium` folder, run `Minium.exe` |
-| macOS (Apple Silicon) | `Minium-vX.Y.Z-macos-arm64.zip` | Unzip and open `Minium.app` |
-| Linux (x64) | `Minium-vX.Y.Z-linux-x64.tar.gz` | Extract and run `Minium/Minium` |
+| Windows 10 / 11 (x64) | `Minium-vX.Y.Z-windows-x64.zip` | `Minium\Minium.exe` |
+| macOS (Apple Silicon) | `Minium-vX.Y.Z-macos-arm64.zip` | `Minium.app` |
+| Linux (x64) | `Minium-vX.Y.Z-linux-x64.tar.gz` | `Minium/Minium` |
 
 ### Windows
 
-- Keep the whole `Minium` folder together. `Minium.exe` needs the `_internal` folder next to it, so move the folder, not just the exe. To launch it from the Start menu or desktop, make a shortcut to the exe.
-- Put the folder somewhere you can write to, like `Documents` or another drive, not `Program Files`. Your library is saved next to the app.
-- The app isn't code-signed, so Windows SmartScreen may say *Windows protected your PC* the first time. Click **More info** → **Run anyway**.
-- The window uses the Microsoft Edge WebView2 runtime. It comes with Windows 11 and up-to-date Windows 10. If the window opens blank, install it from [Microsoft](https://developer.microsoft.com/microsoft-edge/webview2/).
+1. Download `Minium-vX.Y.Z-windows-x64.zip`.
+2. Extract the zip to a folder you can write to, for example `Documents`. Do not use `Program Files`, because the app saves your library next to itself.
+3. Open the `Minium` folder and run `Minium.exe`.
+
+**Note:** The app is not code-signed. The first time, Windows SmartScreen can show *Windows protected your PC*. Select **More info**, then **Run anyway**.
+
+- Keep the `Minium` folder together. `Minium.exe` needs the `_internal` folder next to it. To start it from the Start menu or the desktop, make a shortcut to `Minium.exe`.
+- The window needs the Microsoft Edge WebView2 runtime. Windows 11 and an up-to-date Windows 10 include it.
 
 ### macOS
 
-- The app isn't signed with an Apple Developer certificate yet, so macOS blocks it the first time. Right-click `Minium.app` → **Open** → **Open**, or run `xattr -cr Minium.app` in Terminal.
-- Move it into `Applications` if you like. Your library is stored separately (see [Where your library is stored](#where-your-library-is-stored)), so moving or replacing the app doesn't affect it.
+**Note:** The app is not signed with an Apple Developer certificate. macOS blocks it the first time you open it. Steps 3 to 5 approve it once.
+
+1. Download `Minium-vX.Y.Z-macos-arm64.zip` and open it.
+2. Move `Minium.app` to `Applications`.
+3. Open `Minium.app`. macOS shows that it cannot open the app. Select **Done**.
+4. Open **System Settings** > **Privacy & Security**.
+5. Scroll to **Security**, select **Open Anyway** next to Minium, and confirm.
+
+Your library is stored outside the app. Moving or replacing `Minium.app` does not change it.
 
 ### Linux
 
-- Keep the extracted `Minium` folder together and run `Minium/Minium`. Like on Windows, the library is saved next to the app.
+1. Download `Minium-vX.Y.Z-linux-x64.tar.gz`.
+2. Extract it to a folder you can write to.
+3. Run `Minium/Minium`.
 
-## Getting started
+Keep the `Minium` folder together. The app saves your library next to itself.
 
-1. Open the app and click **Add a folder**.
-2. Pick a folder of images and choose whether to include its subfolders. The scan runs in the background, with progress in the bottom-right corner.
-3. Click any image to open its details panel, then add tags, notes and collections.
+## Getting Started
 
-Nothing on disk is moved or changed at any point. Minium only reads your images to make previews.
+1. Open Minium and select **Add a folder**.
+2. Select a folder of images.
+3. Choose whether to include its subfolders, then confirm. The scan runs in the background. Progress shows in the bottom-right corner.
+4. Select an image to open its details panel.
+5. Add tags and notes, and tick the collections it belongs to.
 
-**Supported formats:** PNG, JPG/JPEG, GIF, WebP, BMP, TIFF and SVG. SVG files are listed and taggable but show a placeholder instead of a preview.
+Minium only reads your images to make previews. It does not move or change any file.
 
-## Screenshots
+**Supported formats:** PNG, JPG/JPEG, GIF, WebP, BMP, TIFF and SVG.
 
-A smart collection. It collects every landscape tagged *sunrise* or *sunset*, and updates as you tag.
+**Note:** SVG files can be tagged, but they show a placeholder instead of a preview.
+
+## Features
+
+- **Files untouched.** Minium never moves, renames, edits or deletes your files. **Remove from library** removes only Minium's record of a file.
+- **Watched folders.** Add any folder on a local disk, an external drive or a network share, with or without its subfolders. Rescan at any time to find new files.
+- **Import files.** Drag images onto the window, or select **Import files**, to add files outside your watched folders.
+- **Tags and notes.** Tag any image and add free-text notes. Each tag in the sidebar shows its file count. Select a tag to filter by it.
+- **Collections.** Put files in a tree of collections and sub-collections. Collections do not depend on where a file is on disk. One file can be in many collections.
+  - **Manual** collections hold the files you add.
+  - **Smart** collections hold every file that matches their tag rules. A rule matches *any* or *all* of its tags. Several rules combine with *and* or *or*. The collection updates as you tag.
+- **Search** by file name, tag or note text.
+- **Missing files.** A file that is no longer at its last location shows under **Missing**. Its tags, notes and collections are kept. **Relink…** points it at its new location.
+- **Offline drives.** A watched folder that cannot be reached, for example on an unplugged drive, shows as *offline* in the sidebar. Its files are not marked missing.
+
+### Screenshots
+
+A smart collection. It holds every landscape tagged *sunrise* or *sunset*, and it updates as you tag.
 
 <picture>
   <img src="assets/screenshots/smart-collections-dark.png" alt="The Golden hour smart collection, showing five sunrise and sunset landscapes chosen by tag rules" width="840">
 </picture>
 
-The **Missing** view. A file that was moved outside the app keeps its tags and notes, and **Relink…** points it at the new location.
+The **Missing** view. A file moved outside the app keeps its tags and notes. **Relink…** points it at the new location.
 
 <picture>
   <img src="assets/screenshots/missing-files-dark.png" alt="The Missing view with one file marked Missing, and the details panel showing a warning banner and the Relink button" width="840">
 </picture>
 
-## Features
+## Privacy
 
-- **Non-destructive.** Your files are never moved, renamed, edited or deleted. Removing something from the library only removes Minium's record of it.
-- **Watched folders.** Add any folder, on a local disk, an external drive or a network share, with or without its subfolders. Rescan any time to pick up new files.
-- **Import individual files.** Drag images onto the window, or use **Import files**, to add files that live outside your watched folders.
-- **Tags and notes.** Tag any image and attach free-form notes. Click a tag in the sidebar to filter by it.
-- **Collections.** Group files into a nested tree of collections, independent of where they live on disk. A file can be in as many collections as you like.
-  - **Manual collections:** you pick exactly which files belong.
-  - **Smart collections:** files are included automatically by tag rules, such as *any* or *all* of some tags, with several rules combined by *and* or *or*. They update as you tag.
-- **Search** by filename, tag or note text.
-- **Missing-file tracking.** If a file disappears from its last known location, its tags and notes are kept and it's listed under **Missing**. Use **Relink…** to point it at the new location.
-- **Offline drives.** If a whole watched folder can't be reached, for example an unplugged drive, it's marked *offline* in the sidebar instead of every file being flagged as missing.
+- **Works offline.** Every feature except **Check for updates** works with no internet connection.
+- **No tracking.** The app has no telemetry, analytics, crash reporting or account.
+- **Your data stays on your computer.** Tags, notes, collections and previews are stored in the `library_data` folder. See [Where Your Library Is Stored](#where-your-library-is-stored). Your images are only read. They are never uploaded.
+- **One network connection, only when you ask.** When you select the version number, the app asks GitHub (`api.github.com`) for the latest release. It sends nothing else. It downloads nothing.
 
 ## Using Minium
 
-| Task | How |
+| Task | Steps |
 | --- | --- |
-| Add a folder to watch | Click **+** next to *Watched folders*, pick a folder and choose whether to include subfolders |
-| Import individual images | Drag them onto the window, or click **Import files** |
-| Pick up new or changed files | Click **Rescan all**, or hover a folder in the sidebar and click its rescan button |
-| Stop watching a folder | Hover it in the sidebar and click **×**. The files on disk are untouched, but their tags and notes are forgotten |
-| Tag or annotate an image | Click it to open the details panel, then add tags and notes |
-| Filter by tag | Click a tag in the sidebar. Clear it with the **×** next to the view title |
-| Create a collection | Click **+** next to *Collections* and choose *Manual* or *Smart* |
-| Add a sub-collection, rename or delete | Hover the collection in the sidebar and use its buttons |
-| Add an image to a collection | Tick the collection in the image's details panel |
-| Find files that have moved | Open **Missing** in the sidebar, select a file and click **Relink…** |
-| Stop tracking a file | Click **Remove from library** in the details panel. The file itself is untouched |
-| Close the details panel | Click **×** or press **Esc** |
-| Check for updates | Click the version number next to *Minium* at the top of the sidebar |
+| Add a folder | Select **+** next to *Watched folders*. Select a folder and choose whether to include subfolders |
+| Import images | Drag them onto the window, or select **Import files** |
+| Find new or changed files | Select **Rescan all**. To rescan one folder, point to it in the sidebar and select **Rescan** |
+| Stop watching a folder | Point to it in the sidebar and select **Stop watching**. The files on disk do not change. Their tags and notes are removed from the library |
+| Tag or annotate an image | Select the image. Add tags and notes in the details panel |
+| Filter by tag | Select a tag in the sidebar. To clear it, select **×** next to the view title |
+| Create a collection | Select **+** next to *Collections*. Choose **Manual** or **Smart** |
+| Add a sub-collection, rename or delete | Point to the collection in the sidebar and use its buttons |
+| Add an image to a collection | Select the image. Tick the collection in the details panel |
+| Relink a moved file | Select **Missing** in the sidebar. Select the file, then select **Relink…** |
+| Stop tracking a file | Select **Remove from library** in the details panel. The file on disk does not change |
+| Close the details panel | Select **×** or press **Esc** |
 
-## Where your library is stored
+### Check for Updates
 
-Your tags, notes, collections and previews are kept in a `library_data` folder:
+The app never checks for updates by itself. To check:
 
-- **Windows and Linux:** inside the `Minium` folder, next to the app
-- **macOS:** `~/Library/Application Support/Minium/library_data`. If you used the app when it was called Asset Manager, the library stays in `~/Library/Application Support/AssetManager/library_data` and the app keeps using it.
+1. Select the version number next to *Minium* at the top of the sidebar. It shows *checking…* while it waits.
+2. Read the result in the **Check for updates** dialog.
+3. If a newer version is available, select **Open release page**. The release page opens in your browser.
+4. Download the new version. Follow [Updating to a New Version](#updating-to-a-new-version).
+
+**Note:** After a newer version is found, the version number stays gold until you close the app.
+
+## Where Your Library Is Stored
+
+Your tags, notes, collections and previews are stored in a `library_data` folder:
+
+- **Windows and Linux:** in the `Minium` folder, next to the app.
+- **macOS:** `~/Library/Application Support/Minium/library_data`.
+
+**Note:** If you used the app when it was called Asset Manager, your Mac library stays in `~/Library/Application Support/AssetManager/library_data`. Minium finds it and keeps using it.
 
 ```
 library_data/
 ├── library.json        # watched folders and settings
 ├── collections.json    # your collection tree
-├── index/              # per-folder file records (tags, notes, metadata)
-└── thumbnails/         # preview images
+├── index/              # file records per folder (tags, notes, details)
+└── thumbnails/         # previews
 ```
 
-It's all plain JSON, and every save is written in one step, so a crash or power cut can't leave a half-written file behind. Saves are retried briefly if a sync app such as OneDrive or Dropbox has a file locked.
+The library is plain JSON. Each save is written in one step, so a crash or power cut cannot leave a half-written file. If a sync app such as OneDrive or Dropbox locks a file, the save tries again for about 2 seconds.
 
 - **Back up:** copy the `library_data` folder.
-- **Start fresh:** close the app and delete `library_data`.
-- **Move to another computer:** copy the app and its `library_data` folder together. Watched folders are stored by path, so a folder at a different path on the new computer shows as offline. Remove it and add it again.
+- **Start again:** close the app and delete the `library_data` folder.
+- **Move to another computer:** copy the app and its `library_data` folder together.
 
-## Updating to a new version
+**Note:** Watched folders are stored by path. On a new computer, a folder at a different path shows as *offline*. Stop watching it and add it again.
 
-- **Windows and Linux:** your library lives inside the app folder, so carry it across. Close the app, extract the new version, then copy `library_data` from your old `Minium` folder into the new one. You can delete the old folder afterwards.
-- **macOS:** replace `Minium.app` with the new one. Your library is stored outside the app and stays where it is.
-- **From Asset Manager:** follow the same steps. On Windows and Linux, copy `library_data` from the old `AssetManager` folder into the new `Minium` folder. On macOS, delete `AssetManager.app` after you install `Minium.app`. The library is found automatically.
+## Updating to a New Version
 
-The version you're running is shown in the window title and next to the app name in the sidebar.
+The version you use shows in the window title and next to *Minium* in the sidebar.
 
-### Check for updates
+### Windows and Linux
 
-The app never checks for updates by itself. To check:
+1. Close Minium.
+2. Extract the new version to a new folder.
+3. Copy `library_data` from the old `Minium` folder into the new `Minium` folder.
+4. Open the new version. When your library shows, you can delete the old folder.
 
-1. Click the version number next to *Minium* at the top of the sidebar. It shows *checking…* while it waits.
-2. Read the result in the **Check for updates** dialog.
-3. If a newer version is available, click **Open release page**. The release page opens in your browser.
-4. Download the new version and follow the steps above.
+### macOS
 
-**Note:** After a newer version is found, the version number turns gold until you close the app.
+1. Close Minium.
+2. Replace `Minium.app` in `Applications` with the new one.
 
-## Privacy
+Your library is stored outside the app and does not change.
 
-- **Works offline.** Every feature except **Check for updates** works with no internet connection.
-- **No tracking.** There is no telemetry, analytics, crash reporting or account.
-- **Your data stays on your computer.** Tags, notes, collections and previews are stored in `library_data` (see [Where your library is stored](#where-your-library-is-stored)). Your images are only read, never uploaded.
-- **One network connection, only when you ask.** When you select the version number, the app asks GitHub (api.github.com) for the latest release. It sends nothing else and nothing is downloaded.
+### From Asset Manager
+
+- **Windows and Linux:** follow the steps above. Copy `library_data` from the old `AssetManager` folder into the new `Minium` folder.
+- **macOS:** install `Minium.app`, then delete `AssetManager.app`. Minium finds your library.
 
 ## Troubleshooting
-
-**Windows: the app shows an error mentioning `Python.Runtime.Loader.Initialize` and doesn't open.**
-This affects v1.2.0 and earlier when the zip was extracted with Windows' built-in extractor, which marks every file as downloaded. Run this in PowerShell, using your own folder path, then start the app again:
-
-```powershell
-Get-ChildItem "C:\path\to\Minium" -Recurse | Unblock-File
-```
-
-Or right-click the zip, choose **Properties**, tick **Unblock**, and extract it again. Later versions fix this automatically.
 
 **The window opens but stays blank (Windows).**
 Install the [Microsoft Edge WebView2 runtime](https://developer.microsoft.com/microsoft-edge/webview2/).
 
+**macOS says the app is damaged, or Open Anyway does not show.**
+Run this command in Terminal, then open the app again:
+
+```bash
+xattr -cr /Applications/Minium.app
+```
+
 **A watched folder shows as *offline*.**
-The drive or network share isn't connected. Its files keep their tags and aren't marked missing. Reconnect it and click rescan.
+The drive or network share is not connected. Its files keep their tags and are not marked missing. Connect it and rescan.
 
-**Check for updates says it can't reach GitHub, or that GitHub limits how often it can be checked.**
-The computer is offline, or GitHub allows only a limited number of checks per hour from one network. Check the internet connection, or try again in an hour. You can also open the [Releases page](https://github.com/TariqMK/Minium/releases) directly.
+**Check for updates says it cannot reach GitHub, or that GitHub limits the checks.**
+The computer is offline, or GitHub allows only a limited number of checks per hour from one network. Check the connection, or try again in an hour. You can also open the [Releases page](https://github.com/TariqMK/Minium/releases) directly.
 
-**Dragging files onto the window doesn't import them.**
-Use **Import files** instead, which always works.
+**Dragging files onto the window does not import them.**
+Select **Import files** instead.
 
 **An image I moved shows as *Missing*.**
-Open **Missing** in the sidebar, select it and click **Relink…** to point it at the new location. Its tags, notes and collections are kept. If you moved it into another watched folder, a rescan lists it there as a new file instead.
+Select **Missing** in the sidebar, select the image, then select **Relink…**. Its tags, notes and collections are kept.
+
+**Note:** If you moved the image into another watched folder, a rescan lists it there as a new file.
+
+**Windows: Asset Manager v1.2.0 or earlier shows an error with `Python.Runtime.Loader.Initialize` and does not open.**
+Windows marks every file from a downloaded zip as blocked. Install the latest Minium, which fixes this. To keep the old version, run this in PowerShell with your own folder path:
+
+```powershell
+Get-ChildItem "C:\path\to\AssetManager" -Recurse | Unblock-File
+```
 
 ---
 
-## For developers
+## For Developers
 
-### Run from source
+### Run From Source
 
-Requires Python 3.10 or newer. It's developed on Python 3.14, on Windows. On Linux, also install the Qt backend with `pip install "pywebview[qt]"`.
+You need Python 3.10 or newer. The app is developed on Python 3.14.
 
-```bash
-git clone https://github.com/TariqMK/Minium.git
-```
+1. Clone the repository:
 
-```bash
-cd Minium
-```
+   ```bash
+   git clone https://github.com/TariqMK/Minium.git
+   ```
 
-```bash
-python -m venv venv
-```
+2. Go into the folder:
 
-```bash
-venv\Scripts\activate
-```
+   ```bash
+   cd Minium
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+3. Make a virtual environment:
 
-```bash
-python app.py
-```
+   ```bash
+   python -m venv venv
+   ```
 
-When run from source, the library is kept in `library_data` next to `app.py` and the version shows as `dev`. **Check for updates** then reports a development build.
+4. Activate it. On Windows:
 
-### Run the tests
+   ```bash
+   venv\Scripts\activate
+   ```
+
+   On macOS and Linux:
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+5. Install the requirements:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   **Note:** On Linux, also install the Qt backend:
+
+   ```bash
+   pip install "pywebview[qt]"
+   ```
+
+6. Start the app:
+
+   ```bash
+   python app.py
+   ```
+
+From source, the library is stored in `library_data` next to `app.py`. The version shows as `dev`, and **Check for updates** reports a development build.
+
+### Run the Tests
 
 The tests use only the standard library and make no network requests:
 
@@ -208,60 +276,85 @@ The tests use only the standard library and make no network requests:
 python -m unittest discover -s tests
 ```
 
-### Build it yourself
+### Build It Yourself
 
-PyInstaller doesn't cross-compile, so build on the operating system you're building for:
+PyInstaller does not cross-compile. Build on the operating system you build for.
 
-```bash
-pip install pyinstaller
-```
+1. Install PyInstaller:
 
-```bash
-python build.py
-```
+   ```bash
+   pip install pyinstaller
+   ```
 
-The build goes to `dist/Minium/` on Windows and Linux, or `dist/Minium.app` on macOS. Every build is stamped with a version: set the `VERSION` environment variable to choose it, otherwise it comes from `git describe`, for example `0.3.0-2-g1a2b3c4` for two commits after the `v0.3.0` tag.
+2. Run the build:
 
-### Update the screenshots
+   ```bash
+   python build.py
+   ```
 
-The README screenshots come from the real app, filled with made-up sample images in a temporary folder. Your own `library_data` is not read or changed. Retake them after any change to the interface:
+The build goes to `dist/Minium/` on Windows and Linux, and to `dist/Minium.app` on macOS. Each build gets a version. Set the `VERSION` environment variable to choose it. Otherwise it comes from `git describe`, for example `0.3.0-2-g1a2b3c4` for 2 commits after the `v0.3.0` tag.
 
-```bash
-pip install -r requirements.txt PySide6
-```
+### Creating a Release
 
-```bash
-python assets/make_screenshots.py
-```
+A GitHub Actions workflow builds each release. It runs only when you start it.
 
-The script stops without saving if a section of the details panel is squeezed, or if your user name, computer name or a real path shows on the page. It also writes the sample images used by the website to `docs/img/`.
+1. On GitHub, open **Actions** > **Release** > **Run workflow**.
+2. Keep **Use workflow from** set to `main`.
+3. Choose the release type:
+   - **draft:** the release is hidden until you select **Publish** on GitHub.
+   - **public:** the release is published and marked as the latest.
+4. Choose the version bump: **major**, **minor** or **patch**.
+5. Select **Run workflow**.
 
-### Update the icon, banner and social card
+The workflow:
 
-All brand images come from the icon masters in `assets/icon/`. To rebuild the `.png`, `.ico` and `.icns` icons, `assets/banner.png`, `assets/social-card.png` and the website's copies in `docs/`, run this on Windows. It needs PySide6 and Pillow, installed in the step above:
+- finds the highest existing version in the tags and the releases, drafts included, and adds the bump. For example, a **patch** after `v2.0.1` gives `v2.0.2`.
+- builds Windows, macOS and Linux at the same time and stamps the version into each build.
+- tags the commit and creates the release with the three downloads, only if all three builds pass.
+
+**Note:** Drafts get a tag too, so their version number stays reserved.
+
+- **Secrets:** none to set up. The workflow uses the built-in `GITHUB_TOKEN`.
+- **Branch builds:** not set up. A run from another branch makes a normal release, not a pre-release, so always run it from `main`.
+- **Release notes:** GitHub generates them. Edit the release afterwards to write them for users.
+
+### Update the Screenshots
+
+The README screenshots come from the real app, filled with made-up sample images in a temporary folder. Your own `library_data` is not read or changed. Retake them after any change to the interface.
+
+1. Install PySide6:
+
+   ```bash
+   pip install -r requirements.txt PySide6
+   ```
+
+2. Run the script:
+
+   ```bash
+   python assets/make_screenshots.py
+   ```
+
+The script stops without saving if part of the details panel is cut off, or if your user name, computer name or a real path shows on the page. It also writes the sample images for the website to `docs/img/`.
+
+### Update the Icon, Banner and Social Card
+
+All brand images come from the icon masters in `assets/icon/`. Run this on Windows, so the fonts match. It needs PySide6 and Pillow:
 
 ```bash
 python assets/make_assets.py
 ```
 
-**Note:** The social card is a repository setting. To change it on GitHub, open **Settings**, then under **General** go to **Social preview** and upload `assets/social-card.png`.
+It rebuilds the `.png`, `.ico` and `.icns` icons, `assets/banner.png`, `assets/social-card.png`, and the website copies in `docs/`.
 
-### Releasing
+**Note:** The social card is a repository setting. To change it on GitHub, open **Settings** > **General** > **Social preview** and upload `assets/social-card.png`.
 
-Releases are built by a GitHub Actions workflow that only runs when started by hand:
+### Built With
 
-1. Go to **Actions → Release → Run workflow**.
-2. Choose **draft** or **public**, and whether this is a **major**, **minor** or **patch** release.
-
-The workflow works out the next version from existing tags and releases (drafts included), builds for Windows, macOS and Linux, then tags the commit and creates the release with all three builds attached. Nothing is tagged unless all three builds succeed.
-
-### Built with
-
-- [Flask](https://flask.palletsprojects.com/): local API serving the interface
+- [Flask](https://flask.palletsprojects.com/): local server for the interface
 - [pywebview](https://pywebview.flowrl.com/): native desktop window
-- [Pillow](https://python-pillow.org/): thumbnail generation
+- [Pillow](https://python-pillow.org/): previews
 - Plain HTML, CSS and JavaScript for the interface, with icons from [Lucide](https://lucide.dev/)
 
 ### Contributing
 
-Issues and pull requests are welcome. If you're planning a larger change, please open an issue first to discuss it.
+Issues and pull requests are welcome. For a large change, open an issue first.
